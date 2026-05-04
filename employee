@@ -1,0 +1,26 @@
+class Employee:
+    def __init__(self, name, basic, allowances, deductions):
+        self.name = name
+        self.basic = basic
+        self.allowances = allowances
+        self.deductions = deductions
+    def calculate_salary(self):
+        gross = self.basic + self.allowances
+        net = gross - self.deductions
+        print("\n--- Salary Slip ---")
+        print("Employee Name:", self.name)
+        print("Basic Salary: ", self.basic)
+        print("Allowances:   ", self.allowances)
+        print("Deductions:   ", self.deductions)
+        print("------------------")
+        print("Gross Salary: ", gross)
+        print("Net Salary:   ", net)
+num = int(input("Enter number of employees: "))
+for i in range(num):
+    print(f"\nEnter details for Employee {i+1}")
+    n = input("Enter Name: ")
+    b = float(input("Enter Basic Salary: "))
+    a = float(input("Enter Total Allowances: "))
+    d = float(input("Enter Total Deductions: "))
+    emp_obj = Employee(n, b, a, d)
+    emp_obj.calculate_salary()
